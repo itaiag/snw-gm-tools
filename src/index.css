@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.main-box {
+  font-size: medium;  
+}
+
+.main-view {
+  margin-right: 10px;
+}
+
+.image {
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */  
+
+}
+
+
+/* For desktop */
+@media (min-width: 768px) {
+  .main-box {
+      /* Adjustments for larger screens can go here */
+      font-size: large;
+      height: 100%;
+      margin: 0;
+      display: block;
+      justify-content: center;
+      align-items: center;
+
+      /* Optional: Set a max-width for .treasure-view and margin auto for horizontal centering */
+      max-width: 60%; /* Adjust based on your design */
+      margin: auto;
+  
+  }
+  .image {
+    /* Adjustments for mobile view */
+    width: 100%; /* Example adjustment */
+    height: auto; /* Adjust if necessary */
+  }
+
+}
+
+
