@@ -24,7 +24,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ['בית','קוביות','קסמים ולחשים', 'מפלצות', 'אוצר', 'אודות'];
+const navItems = ['בית','מפלצות','קסמים', 'אוצר', 'קוביות','אודות'];
 
 export default function DrawerAppBar(props: Props) {
     const { window } = props;
@@ -47,7 +47,7 @@ export default function DrawerAppBar(props: Props) {
             case 'אוצר':
                 navigate('/treasure');
                 break;
-            case 'קסמים ולחשים':
+            case 'קסמים':
                 navigate('/magics');
                 break;
             case 'קוביות':
@@ -63,7 +63,7 @@ export default function DrawerAppBar(props: Props) {
 
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'right' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
                 חרבות וכשפים
             </Typography>
@@ -71,7 +71,7 @@ export default function DrawerAppBar(props: Props) {
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
-                        <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleMenuItemClick({ item })}>
+                        <ListItemButton sx={{ textAlign: 'right' }} onClick={() => handleMenuItemClick({ item })}>
                             <ListItemText primary={item} />
                         </ListItemButton>
                     </ListItem>
@@ -116,6 +116,7 @@ export default function DrawerAppBar(props: Props) {
                 <Drawer
                     container={container}
                     variant="temporary"
+                    anchor="right"
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{

@@ -13,8 +13,7 @@ export default function MagicTableComponent({ type }: { type: string }) {
     const handleChange = (event: SelectChangeEvent | null) => {
         setMagicList(null);
         let level: string = event ? event.target.value + "": "1";
-        setLevel(level);
-        let index = 0;
+        setLevel(level);        
         const magicListToShow: Array<string> = allMagics
             .filter(m => m.סוג === type)
             .filter(m => m.עוצמה === parseInt(level))

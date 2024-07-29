@@ -8,7 +8,6 @@ import { potions } from '../../../data/potions';
 import { scrolls } from '../../../data/scrolls';
 import { magicalWeapons } from '../../../data/magicalWeapons';
 import { magicalItems } from '../../../data/magicalItems';
-import { Typography } from '@mui/material';
 
 export default function TreasureListView() {
 
