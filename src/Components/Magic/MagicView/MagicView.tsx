@@ -5,14 +5,14 @@ import Divider from '@mui/material/Divider';
 import { useNavigate } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import { Typography } from '@mui/material';
-import { allMagics} from '../../../data/magics';
+import { magicsData} from '../../../data/magicsData';
 
 const MagicView: React.FC = () => {
 
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const magicName = params.get('name');
-  const magic = allMagics.find(m => m["שם"] === magicName);
+  const magic = magicsData.find(m => m["שם"] === magicName);
   const navigate = useNavigate();
 
   

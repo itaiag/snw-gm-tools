@@ -1,4 +1,4 @@
-export const magicalItems = [
+export const magicalItemsData = [
   {
     "סוג": "פשוט",
     "שם": "טבעת הגנה פלוס 1",

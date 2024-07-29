@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useLocation } from 'react-router-dom';
-import { monsters } from '../../../data/Monsters';
+import { monstersData } from '../../../data/monstersData';
 import Button from '@mui/material/Button';
 import Divider from '@mui/material/Divider';
 import { useNavigate } from 'react-router-dom';
@@ -14,7 +14,7 @@ const MonsterView: React.FC = () => {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const monsterName = params.get('name');
-  const monster = monsters.find(monster => monster["שם"] === monsterName);
+  const monster = monstersData.find(monster => monster["שם"] === monsterName);
   const navigate = useNavigate();
   const [hitDice, setHitDice] = useState(0);
 

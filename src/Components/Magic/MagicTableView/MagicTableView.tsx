@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
 import { MenuItem, FormControl, InputLabel } from '@mui/material';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
-import { allMagics } from '../../../data/magics';
-import MagicTable from './MagicTable';
+import { magicsData } from '../../../data/magicsData';
+import MagicTable from '../MagicTable/MagicTable';
 
-export default function MagicTableComponent({ type }: { type: string }) {
+export default function MagicTableView({ type }: { type: string }) {
 
     const [level, setLevel] = React.useState('1');
     const [magicList, setMagicList] = useState<null | string[]>();
@@ -14,7 +14,7 @@ export default function MagicTableComponent({ type }: { type: string }) {
         setMagicList(null);
         let level: string = event ? event.target.value + "": "1";
         setLevel(level);        
-        const magicListToShow: Array<string> = allMagics
+        const magicListToShow: Array<string> = magicsData
             .filter(m => m.סוג === type)
             .filter(m => m.עוצמה === parseInt(level))
             .map(m => m.שם);

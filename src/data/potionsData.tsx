@@ -1,4 +1,4 @@
-export const potions = 
+export const potionsData = 
     [
         {
           "סוג": "רגיל",

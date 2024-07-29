@@ -1,4 +1,4 @@
-export const magicalWeapons = [
+export const magicalWeaponsData = [
     {
       "שם": "חרב +1",
       "הסתברות": "1-10"

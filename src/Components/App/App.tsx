@@ -2,13 +2,15 @@ import * as React from 'react';
 import TabbedMonstersView from '../Monsters/TabbedMonstersView';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MainAppBar from './MainAppBar';
-import HomeView from '../HomeView/HomeView';
+import HomeView from '../Home/HomeView/HomeView';
 import MonsterView from '../Monsters/MonsterView/MonsterView';
 import TabbedTreasureView from '../Treasure/TabbedTreasureView';
 import AboutView from '../About/AboutView';
 import TabbedMagicView from '../Magic/TabbedMagicView';
-import MagicView from '../Magic/MagicTable/MagicView';
-import DiceRoller from '../DiceRoller/DiceRoller';
+import MagicView from '../Magic/MagicView/MagicView';
+import DiceRollerView from '../DiceRoller/DiceRollerView';
+
+
 
 class App extends React.Component {
     render() {
@@ -25,7 +27,7 @@ class App extends React.Component {
                         <Route path="/magics" element={<TabbedMagicView />} />
                         <Route path="/magic" element={<MagicView />} />
                         <Route path="/about" element={<AboutView />} />
-                        <Route path="/roller" element={<DiceRoller />} />
+                        <Route path="/roller" element={<DiceRollerView />} />
                     </Routes>
                 </div>
             </Router>

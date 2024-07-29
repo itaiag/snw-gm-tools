@@ -1,6 +1,6 @@
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
-import {monsters} from '../../../data/Monsters'
+import {monstersData} from '../../../data/monstersData'
 import { Box } from '@mui/material';
 
 
@@ -20,7 +20,7 @@ export default function MonsterGrid({type} : {type: string}) {
     function getMonsters() {
         let idCounter = 0;
         let monsterRows: Array<any> = [];
-        monsters.forEach(monster => { 
+        monstersData.forEach(monster => { 
             if (monster['מקור'] === type) {
                 monsterRows.push({ id: idCounter++, name: monster.שם, difficulty:monster['דירוג קושי'] })
             }

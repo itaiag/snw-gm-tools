@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -6,7 +5,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { Item } from '../Item'
+import { Item } from '../ItemEntity'
 
 export default function TreasureTable({ items }: { items: Item[] }) {
   return (
@@ -15,11 +14,11 @@ export default function TreasureTable({ items }: { items: Item[] }) {
         <TableHead>
           <TableRow>
             <TableCell align='right'>חפץ</TableCell>
-            <TableCell>ערך</TableCell>
+            <TableCell>סוג</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {items.map((item) => (
+          {items.filter(item => item.tablePointer === "").map((item) => (
             <TableRow
               key={item.id}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -28,7 +27,7 @@ export default function TreasureTable({ items }: { items: Item[] }) {
                 {item.name}
               </TableCell>
               <TableCell component="th" scope="row">
-                {item.value !== 0 && item.value}
+                {item.type !== "" && item.type}
               </TableCell>
             </TableRow>
           ))}

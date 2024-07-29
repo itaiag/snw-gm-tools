@@ -1,4 +1,4 @@
-export const scrolls = [
+export const scrollsData = [
   {
     "סוג": "רגיל",
     "שם": "מגילה לחש אחד, עוצמה ראשונה",

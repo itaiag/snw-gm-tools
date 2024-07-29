@@ -1,4 +1,4 @@
-export const allMagics = [
+export const magicsData = [
   {
     "סוג": "כוהן",
     "עוצמה": 1,

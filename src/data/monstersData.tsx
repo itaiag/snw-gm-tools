@@ -1,4 +1,4 @@
-export const monsters =
+export const monstersData =
 [
   {
     "שם": "אורק",

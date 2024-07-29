@@ -3,8 +3,8 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import TreasureCalcView from './TreasureCalc/TreasureCalcView';
-import TreasureListView from './TreasureView/TreasureListView';
+import TreasureCalcView from './TreasureCalcView/TreasureCalcView';
+import TreasureTableView from './TreasureTableView/TreasureTableView';
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -57,7 +57,7 @@ export default function TabbedMonstersView() {
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>            
         <Typography variant='h5'>רשימת אוצרות</Typography>
-        <TreasureListView/>
+        <TreasureTableView/>
       </CustomTabPanel>
     </Box>
   );

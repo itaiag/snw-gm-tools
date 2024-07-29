@@ -14,7 +14,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import TextField from '@mui/material/TextField';
 
 
-export default function DiceRoller() {
+export default function DiceRollerView() {
     const [result, setResult] = useState<{ "roll": string, "result": number }[]>([]);
     const [numSides, setNumSides] = useState<number>(20);
     const [numOfRolls, setNumOfRolls] = useState<number>(1);

@@ -1,9 +1,9 @@
-import { Item } from '../Item';
-import { potions } from '../../../data/potions';
-import { scrolls } from '../../../data/scrolls';
-import { magicalWeapons } from '../../../data/magicalWeapons';
-import { magicalItems } from '../../../data/magicalItems';
-import rollDice from '../../../utils/DiceRoller'
+import { Item } from '../Components/Treasure/ItemEntity';
+import { potionsData } from '../data/potionsData';
+import { scrollsData } from '../data/scrollsData';
+import { magicalWeaponsData } from '../data/magicalWeaponsData';
+import { magicalItemsData } from '../data/magicalItemsData';
+import rollDice from './DiceRoller'
 let index = 0;
 
 function addItem(items: Array<Item>, item: Item): Array<Item> {
@@ -72,31 +72,31 @@ export function calculateItems(experience: number): Array<Item> {
                 switch (rollDice(4)) {
                     case 1:
                         console.log("Rolling for potion");
-                        item = findItemByProbability(rollDice(20), potions.filter(potion => potion['סוג'] === 'רגיל'));
+                        item = findItemByProbability(rollDice(20), potionsData.filter(potion => potion['סוג'] === 'רגיל'));
                         break;
                     case 2:
                         console.log("Rolling for scroll");
-                        item = findItemByProbability(rollDice(20), scrolls.filter(scroll => scroll['סוג'] === 'רגיל'));
+                        item = findItemByProbability(rollDice(20), scrollsData.filter(scroll => scroll['סוג'] === 'רגיל'));
                         if (item.tablePointer !== "") {
                             switch (item.tablePointer) {
                                 case "הגנה":
                                     console.log("Rolling for protection scroll");
-                                    item = findItemByProbability(rollDice(6), scrolls.filter(scroll => scroll['סוג'] === 'הגנה'));
+                                    item = findItemByProbability(rollDice(6), scrollsData.filter(scroll => scroll['סוג'] === 'הגנה'));
                                     break;
                                 case "מקוללת":
                                     console.log("Rolling for cursed scroll");
-                                    item = findItemByProbability(rollDice(12), scrolls.filter(scroll => scroll['סוג'] === 'מקוללת'));
+                                    item = findItemByProbability(rollDice(12), scrollsData.filter(scroll => scroll['סוג'] === 'מקוללת'));
                                     break;
                             }
                         }
                         break;
                     case 3:
                         console.log("Rolling for 1 magical weapon or armor");
-                        item = findItemByProbability(rollDice(100), magicalWeapons);
+                        item = findItemByProbability(rollDice(100), magicalWeaponsData);
                         break;
                     case 4:
                         console.log("Rolling for simple magical item");
-                        item = findItemByProbability(rollDice(20), magicalItems.filter(item => item['סוג'] === 'פשוט'));
+                        item = findItemByProbability(rollDice(20), magicalItemsData.filter(item => item['סוג'] === 'פשוט'));
                         break;
                 }
                 if (item !== null) {
@@ -144,23 +144,23 @@ export function calculateItems(experience: number): Array<Item> {
                     case 1:
                         console.log("Rolling 3 for potions");
                         for (let i = 0; i < 3; i++) {
-                            item = findItemByProbability(rollDice(20), potions.filter(potion => potion['סוג'] === 'רגיל'));
+                            item = findItemByProbability(rollDice(20), potionsData.filter(potion => potion['סוג'] === 'רגיל'));
                             items = addItem(items, item);
                         }
                         break;
                     case 2:
                         console.log("Rolling for 3 scrolls");
                         for (let i = 0; i < 3; i++) {
-                            item = findItemByProbability(rollDice(20), scrolls.filter(scroll => scroll['סוג'] === 'רגיל'));
+                            item = findItemByProbability(rollDice(20), scrollsData.filter(scroll => scroll['סוג'] === 'רגיל'));
                             if (item.tablePointer !== "") {
                                 switch (item.tablePointer) {
                                     case "הגנה":
                                         console.log("Rolling for protection scroll");
-                                        item = findItemByProbability(rollDice(6), scrolls.filter(scroll => scroll['סוג'] === 'הגנה'));
+                                        item = findItemByProbability(rollDice(6), scrollsData.filter(scroll => scroll['סוג'] === 'הגנה'));
                                         break;
                                     case "מקוללת":
                                         console.log("Rolling for cursed scroll");
-                                        item = findItemByProbability(rollDice(12), scrolls.filter(scroll => scroll['סוג'] === 'מקוללת'));
+                                        item = findItemByProbability(rollDice(12), scrollsData.filter(scroll => scroll['סוג'] === 'מקוללת'));
                                         break;
                                 }
                             }
@@ -171,13 +171,13 @@ export function calculateItems(experience: number): Array<Item> {
                     case 3:
                         console.log("Rolling 3 for magical weapon or armors");
                         for (let i = 0; i < 3; i++) {
-                            item = findItemByProbability(rollDice(100), magicalWeapons);
+                            item = findItemByProbability(rollDice(100), magicalWeaponsData);
                             items = addItem(items, item);
                         }
                         break;
                     case 4:
                         console.log("Roll for expensive magical item");
-                        item = findItemByProbability(rollDice(20), magicalItems.filter(item => item['סוג'] === 'יקר'));
+                        item = findItemByProbability(rollDice(20), magicalItemsData.filter(item => item['סוג'] === 'יקר'));
                         items = addItem(items, item);
                         break;
                 }

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Button, Typography } from '@mui/material';
-import TreasureTable from './GeneratedTreasureTable';
-import { calculateItems } from './TreasureCalculator'
-import { Item } from '../Item'
+import RandomTreasureTable from '../RandomTreasureTable/RandomTreasureTable';
+import { calculateItems } from '../../../utils/TreasureCalculator'
+import { Item } from '../ItemEntity'
 import Divider from '@mui/material/Divider';
 
 export default function TreasureCalcView() {
@@ -81,7 +81,7 @@ export default function TreasureCalcView() {
                     </Box>
                 </Box>
             }
-            {items && <TreasureTable items={items} />}
+            {items && <RandomTreasureTable items={items} />}
 
         </Box>
     );

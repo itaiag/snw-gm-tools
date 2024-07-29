@@ -2,7 +2,7 @@ import * as React from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
-import MagicTableComponent from './MagicTable/MagicTableComponent';
+import MagicTableView from './MagicTableView/MagicTableView';
 
 import { Divider, Typography } from '@mui/material';
 
@@ -54,12 +54,12 @@ export default function TabbedMonstersView() {
       <CustomTabPanel value={value} index={0}>
       <Typography variant='h5'>לחשי כוהן</Typography>
         <Divider />
-        <MagicTableComponent type='כוהן' />
+        <MagicTableView type='כוהן' />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
         <Typography variant='h5'>קסמי קוסם</Typography>
         <Divider />
-        <MagicTableComponent  type='קוסם'/>
+        <MagicTableView  type='קוסם'/>
       </CustomTabPanel>
     </Box>
   );
